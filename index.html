@@ -1,0 +1,41 @@
+<!--Créer une liste avec trois éléments (Pierre, Feuille, Ciseaux). Ajouter un bouton « Shifumi ! ». Lorsque l'on clique sur « Shifumi ! », choisir un élément au hasard (Pierre, Feuille ou Ciseaux). Le comparer à l'élément choisi par le joueur pour voir qui a gagné entre l'humain et la machine.
+
+Bonus : Ajouter un compteur de victoires et de défaites et afficher le pourcentage de victoire contre l'ordinateur.-->
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/Ex1jQ.css">
+		<title>jQ Part 4 Exercice 1</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<h1>jQuerry</h1>
+			<h2>Partie 4 - Exercice 1</h2>
+			<div class="row">
+				<div class="divBorder col-xs-12 col-sm-9 col-md-6 col-lg-3">
+					<form class="playerChoice">
+						<p class="pFirst">Joueur</p>
+						<p><input type="radio" name="uniqueChoice" id="rock"><label for="uniqueChoice">Pierre</label></p>
+						<p><input type="radio" name="uniqueChoice" id="sheet"><label for="uniqueChoice">Feuille</label></p>
+						<p><input type="radio" name="uniqueChoice" id="scissors"><label for="uniqueChoice">Ciseaux</label></p>
+					</form>
+				</div>
+				<div id="borderResult" class="col-xs-12 col-sm-3 col-md-2 col-lg-6">
+					<div id="divResult" class="BricoloLeBricoleur">Sélectionnez pierre, feuille ou ciseaux</div>
+					<div id="score">0-0</div>
+				</div>
+				<div class="divBorder col-xs-12 col-sm-9 col-md-4 col-lg-3">
+					<p class="computerChoice pFirst">Ordinateur</p>
+					<p id="iaRock" class="computerChoice">Pierre</p>
+					<p id="iaSheet" class="computerChoice">Feuille</p>
+					<p id="iaScissors" class="computerChoice">Ciseaux</p>
+				</div>
+			</div>
+			<div id="shifumi" class="button">Shifumi !</div>
+		</div>
+		<script src="assets/js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="assets/js/Ex1jQ.js"></script>
+	</body>
+</html>
