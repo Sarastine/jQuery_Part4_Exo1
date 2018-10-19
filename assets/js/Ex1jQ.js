@@ -3,7 +3,11 @@ $(function(){
 	computerPoint = 0;
 	playerChoice = 0;
 	computerChoice = 0;
+	gameCounter = 0;
+	victoryPercent = 0;
+	defeatPercent = 0;
 	$('#shifumi').click(function(){
+		gameCounter ++;
 		//Récupération valeur du joueur
 		if ($('input[name=uniqueChoice]:checked').val() != 'on') {
 			alert('Sélectionnez Pierre, Feuille ou Ciseaux')
@@ -67,7 +71,18 @@ $(function(){
 				}
 			}
 			//Mise à jour du score
+			victoryPercent = Math.round((playerPoint / gameCounter) * 10000) / 100;
+			defeatPercent = Math.round((computerPoint / gameCounter) * 10000) / 100;
 			$('#score').text(playerPoint + '-' + computerPoint);
+			$('#percent').text(victoryPercent + '% de victoire, ' + defeatPercent + '% de défaite.');
+			if (victoryPercent > defeatPercent) {
+				$('#percent').css('color','#FF0');
+			} else if (victoryPercent < defeatPercent) {
+				$('#percent').css('color','#844');
+			} else {
+				$('#percent').css('color','#888');
+			}
+			console.log(gameCounter);
 		}
 	});
 });
